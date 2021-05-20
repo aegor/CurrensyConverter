@@ -1,0 +1,82 @@
+### Create customer1
+POST http://localhost:9000/customer
+Content-Type: application/json
+
+{
+  "login": "aurora1",
+  "password": "sirius1",
+  "firstName": "firstname1",
+  "lastName": "lastName1",
+  "emailId": "emailId1@mail.ru"
+}
+
+### Create customer2
+POST http://localhost:9000/customer
+Content-Type: application/json
+
+{
+  "login": "aurora2",
+  "password": "sirius2",
+  "firstName": "firstname2",
+  "lastName": "lastName2",
+  "emailId": "emailId2@mail.ru"
+}
+
+### Show all customers
+GET http://localhost:9000/customer
+Accept: application/json
+
+### add amount to customer
+POST http://localhost:9000/customer/add_amount
+Content-Type: application/json
+
+{
+  "login": "aurora2",
+  "password": "sirius2",
+  "currencyName": "EUR",
+  "currencyAmount": 100
+}
+
+### add amount to customer
+POST http://localhost:9000/customer/add_amount
+Content-Type: application/json
+
+{
+  "login": "aurora2",
+  "password": "sirius2",
+  "currencyName": "USD",
+  "currencyAmount": 100
+}
+### Show balance by customer
+POST http://localhost:9000/customer/balance
+Content-Type: application/json
+
+{
+  "login": "aurora2",
+  "password": "sirius2"
+}
+
+### Create order
+POST http://localhost:9000/orders
+Content-Type: application/json
+
+{
+  "sourceCurrency": "USD",
+  "targetCurrency": "EUR",
+  "rate": 0.5,
+  "amountToConvert": "100"
+}
+
+### Show orders
+GET http://localhost:9000/orders
+Content-Type: application/json
+
+### Exchange
+POST http://localhost:9000/customer/convert
+Content-Type: application/json
+
+{
+"login": "aurora2",
+"password": "sirius2",
+"orderId": 2
+}
