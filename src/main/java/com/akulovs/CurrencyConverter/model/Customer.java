@@ -41,11 +41,10 @@ public class Customer {
 	@NotBlank
 	private String emailId;
 
-	//@OneToMany(mappedBy="customer", cascade = CascadeType.ALL, orphanRemoval = true)
-	@ElementCollection
+	@ElementCollection(fetch = FetchType.EAGER)
 	private Map<String, @DecimalMin("0.0") @Digits(integer = 11, fraction = 2) BigDecimal> currencies;
 
-	public Customer(String login, String firstName, String lastName, String emailId) {
+	public Customer(String login, String password, String firstName, String lastName, String emailId) {
 		this.login = login;
 		this.password = password;
 		this.firstName = firstName;
