@@ -7,7 +7,6 @@ import com.akulovs.CurrencyConverter.model.Customer;
 
 import java.util.List;
 
-//@Component
 public interface CustomerService {
     CustomerBalanceResponse getBalance(CustomerBalanceRequest request);
     CustomerBalanceResponse addCurrencyToCustomerBalance(CustomerBalanceRequest customerReq);

@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 import java.math.BigDecimal;
 import java.util.List;
 
-//@Component
 public interface CustomerOrderService {
 
     CustomerOrder createOrder(CustomerOrder order);
